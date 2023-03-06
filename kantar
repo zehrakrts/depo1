@@ -1,0 +1,49 @@
+from random import randint
+import random
+top_five_list = []
+kefe_list = [] #kefeler
+show_gr = [] #seçilen kefeler
+result_list = []
+
+for i in range(14):
+    random_gr = randint(80, 120)
+    kefe_list.append(random_gr)
+print(kefe_list)
+
+for s in range(5):
+    
+    kefe_list_total = 0 #toplanan değer   
+    for k in range(10):
+        new_number = random.choice(kefe_list)
+        kefe_list_total += new_number
+        show_gr.append(new_number)
+
+        if(1100 > kefe_list_total > 900):
+            print("Values: ", show_gr)
+            print("Sum of kefe : ", kefe_list_total)
+            break
+            
+    top_five_list.append(kefe_list_total)
+
+print(top_five_list)  
+for n in top_five_list:
+    result = abs(n-1000)
+    result_list.append(result)
+    
+rslt = min(result_list)
+
+
+for k in top_five_list:
+    
+    if rslt == abs(k-1000):
+        
+        print("Alınacak değer : ", k)
+        
+        break
+i = 0
+
+for m in top_five_list:
+    if k == top_five_list[i]:
+        print(i+1, "inci deneme")
+    i +=1
+    
